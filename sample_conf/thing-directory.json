@@ -9,7 +9,7 @@
   },
   "dnssd": {
     "publish": {
-      "enabled": false,
+      "enabled": true,
       "instance": "LinkSmart Thing Directory",
       "domain": "local.",
       "interfaces": []
@@ -26,10 +26,10 @@
       "certFile": "./tls/cert.pem"
     },
     "auth": {
-      "enabled": false,
+      "enabled": true,
       "provider": "keycloak",
-      "providerURL": "https://provider-url",
-      "clientID": "sampleTD",
+      "providerURL": "http://localhost:8080/realms/realm/.well-known/openid-configuration",
+      "clientID": "client",
       "basicEnabled": false,
       "authorization": {
         "enabled": false,

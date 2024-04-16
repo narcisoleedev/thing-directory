@@ -1,0 +1,806 @@
+[
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "created": "2020-04-07T14:14:01.403935979Z",
+        "id": "urn:uuid:19bf7ffd-1087-4441-a670-bbdd2aa2fb41",
+        "meta": {
+            "nodered": {
+                "transformation": "raw_to_senml"
+            },
+            "senml_name": "c5/room2/device2",
+            "zway_name": "ZWayVDev_zway_3-0-49-4"
+        },
+        "modified": "2020-04-07T14:14:01.403935979Z",
+        "properties": {
+            "current": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.gateway.com/status",
+                        "op": [
+                            "readproperty"
+                        ],
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            },
+            "history": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.storage-service.com/data/c5/room2/device2",
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            }
+        },
+        "registration": {
+            "created": "2024-03-05T20:58:37.845401625Z",
+            "modified": "2024-03-05T20:58:37.845401625Z"
+        },
+        "security": [
+            "basic_sc"
+        ],
+        "securityDefinitions": {
+            "basic_sc": {
+                "in": "header",
+                "scheme": "basic"
+            }
+        },
+        "title": "Fibaro Wall Plug"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "setAlarm": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.107:8080/setAlarm"
+                    }
+                ],
+                "input": {
+                    "properties": {
+                        "time": {
+                            "type": "string"
+                        },
+                        "tone": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "snoozeAlarm": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.107:8080/snoozeAlarm"
+                    }
+                ]
+            }
+        },
+        "description": "An alarm clock that can be set and controlled through the internet, with various alarm tones and settings.",
+        "events": {
+            "alarmRinging": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.107:8080/events/alarmRinging"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:2003a64a-255c-4a3c-8141-eac8c80ce38e",
+        "properties": {
+            "alarmTime": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.107:8080/alarmTime"
+                    }
+                ],
+                "type": "string",
+                "writable": true
+            },
+            "alarmTone": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.107:8080/alarmTone"
+                    }
+                ],
+                "type": "string",
+                "writable": true
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:47:41.557980229Z",
+            "modified": "2024-03-19T19:47:41.557980229Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Alarm Clock"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "setBrightness": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.100:8080/setBrightness"
+                    }
+                ],
+                "input": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "integer"
+                }
+            },
+            "toggle": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.100:8080/toggle"
+                    }
+                ]
+            }
+        },
+        "description": "A web connected lamp that can be controlled remotely",
+        "events": {
+            "overheating": {
+                "data": {
+                    "type": "string"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.100:8080/events/overheating"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:228c13bb-cc97-4731-963f-e8e887f46407",
+        "properties": {
+            "brightness": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.100:8080/brightness"
+                    }
+                ],
+                "maximum": 100,
+                "minimum": 0,
+                "type": "integer",
+                "writable": true
+            },
+            "status": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.100:8080/status"
+                    }
+                ],
+                "readOnly": true,
+                "type": "string"
+            }
+        },
+        "registration": {
+            "created": "2024-02-20T20:09:00.765259706Z",
+            "modified": "2024-02-20T20:09:00.765259706Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Lamp"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "makeCoffee": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.105:8080/makeCoffee"
+                    }
+                ],
+                "input": {
+                    "properties": {
+                        "cupSize": {
+                            "type": "string"
+                        },
+                        "strength": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
+        "description": "A coffee maker that can be programmed and controlled remotely to make coffee.",
+        "events": {
+            "coffeeReady": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.105:8080/events/coffeeReady"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:22b56031-12ea-4986-ac42-7651b9726220",
+        "properties": {
+            "status": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.105:8080/status"
+                    }
+                ],
+                "readOnly": true,
+                "type": "string"
+            },
+            "waterLevel": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.105:8080/waterLevel"
+                    }
+                ],
+                "readOnly": true,
+                "type": "number"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:44:19.073334227Z",
+            "modified": "2024-03-19T19:44:19.073334227Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Coffee Maker"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "waterPlants": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.108:8080/waterPlants"
+                    }
+                ]
+            }
+        },
+        "description": "A garden system that automates watering based on soil moisture and weather predictions.",
+        "events": {
+            "wateringCompleted": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.108:8080/events/wateringCompleted"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:2ee7daaa-30ff-45c1-b1be-cdf854407878",
+        "properties": {
+            "lastWatered": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.108:8080/lastWatered"
+                    }
+                ],
+                "readOnly": true,
+                "type": "string"
+            },
+            "soilMoisture": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.108:8080/soilMoisture"
+                    }
+                ],
+                "readOnly": true,
+                "type": "integer"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T20:05:03.93793684Z",
+            "modified": "2024-03-19T20:05:03.93793684Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Garden System"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "description": "A sensor that monitors environmental conditions like temperature, humidity, and air quality.",
+        "id": "urn:uuid:3a6a6e2e-2dc9-4bc4-9060-90b700844242",
+        "properties": {
+            "airQuality": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.104:8080/airQuality"
+                    }
+                ],
+                "readOnly": true,
+                "type": "string"
+            },
+            "humidity": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.104:8080/humidity"
+                    }
+                ],
+                "readOnly": true,
+                "type": "number"
+            },
+            "temperature": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.104:8080/temperature"
+                    }
+                ],
+                "readOnly": true,
+                "type": "number"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:44:05.162796327Z",
+            "modified": "2024-03-19T19:44:05.162796327Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Environmental Sensor"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "startWash": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.106:8080/startWash"
+                    }
+                ],
+                "input": {
+                    "properties": {
+                        "cycle": {
+                            "type": "string"
+                        },
+                        "temperature": {
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "stopWash": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.106:8080/stopWash"
+                    }
+                ]
+            }
+        },
+        "description": "A washing machine that can be controlled remotely for starting, stopping, and monitoring cycles.",
+        "events": {
+            "washCompleted": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.106:8080/events/washCompleted"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:7638ce1c-96d0-416a-9c0f-c7ef9cf28b44",
+        "properties": {
+            "currentCycle": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.106:8080/currentCycle"
+                    }
+                ],
+                "readOnly": true,
+                "type": "string"
+            },
+            "remainingTime": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.106:8080/remainingTime"
+                    }
+                ],
+                "readOnly": true,
+                "type": "integer"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:45:52.178723844Z",
+            "modified": "2024-03-19T19:45:52.178723844Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Washing Machine"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "setBrightness": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/setBrightness"
+                    }
+                ],
+                "input": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "integer"
+                }
+            },
+            "setColor": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/setColor"
+                    }
+                ],
+                "input": {
+                    "type": "string"
+                }
+            }
+        },
+        "description": "A smart lighting system that allows for remote control and scheduling of light bulbs.",
+        "events": {
+            "lightOff": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/events/lightOff"
+                    }
+                ]
+            },
+            "lightOn": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/events/lightOn"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:7a91b422-c947-4192-a4e1-e5b6ea519117",
+        "properties": {
+            "brightness": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/brightness"
+                    }
+                ],
+                "maximum": 100,
+                "minimum": 0,
+                "type": "integer",
+                "writable": true
+            },
+            "color": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.102:8080/color"
+                    }
+                ],
+                "type": "string",
+                "writable": true
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:41:41.850482063Z",
+            "modified": "2024-03-19T19:41:41.850482063Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Lighting System"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "id": "urn:uuid:a7394682-499e-4755-83ea-34406d9aa2a6",
+        "properties": {
+            "status": {
+                "forms": [
+                    {
+                        "contentType": "text/html",
+                        "href": "https://example.com/status",
+                        "op": [
+                            "readproperty"
+                        ]
+                    }
+                ]
+            }
+        },
+        "registration": {
+            "created": "2024-02-13T20:11:32.977553185Z",
+            "modified": "2024-02-13T20:11:32.977553185Z"
+        },
+        "security": [
+            "nosec_sc"
+        ],
+        "securityDefinitions": {
+            "nosec_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "ExampleSensor"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "setTemperature": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.101:8080/setTemperature"
+                    }
+                ],
+                "input": {
+                    "maximum": 30,
+                    "minimum": 10,
+                    "type": "integer"
+                }
+            }
+        },
+        "description": "A smart thermostat that can be controlled remotely to manage home temperature.",
+        "events": {
+            "temperatureChange": {
+                "data": {
+                    "type": "integer"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.101:8080/events/temperatureChange"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:a7f38087-c6b1-4fca-8d88-5fbea2ce5854",
+        "properties": {
+            "humidity": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.101:8080/humidity"
+                    }
+                ],
+                "maximum": 100,
+                "minimum": 0,
+                "readOnly": true,
+                "type": "integer"
+            },
+            "temperature": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.101:8080/temperature"
+                    }
+                ],
+                "maximum": 30,
+                "minimum": 10,
+                "type": "integer",
+                "writable": true
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:41:17.095055312Z",
+            "modified": "2024-03-19T19:41:17.095055312Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Thermostat"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "created": "2020-04-07T14:14:01.403935979Z",
+        "id": "urn:uuid:a7fa0d4d-3e62-4bc8-9115-230fbd81b936",
+        "meta": {
+            "nodered": {
+                "transformation": "raw_to_senml"
+            },
+            "senml_name": "c5/room2/device2",
+            "zway_name": "ZWayVDev_zway_3-0-49-4"
+        },
+        "modified": "2020-04-07T14:14:01.403935979Z",
+        "properties": {
+            "current": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.gateway.com/status",
+                        "op": [
+                            "readproperty"
+                        ],
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            },
+            "history": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.storage-service.com/data/c5/room2/device2",
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:35:57.961589984Z",
+            "modified": "2024-03-19T19:35:57.961589984Z"
+        },
+        "security": [
+            "basic_sc"
+        ],
+        "securityDefinitions": {
+            "basic_sc": {
+                "in": "header",
+                "scheme": "basic"
+            }
+        },
+        "title": "Fibaro Wall Plug"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "actions": {
+            "lock": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.103:8080/lock"
+                    }
+                ]
+            },
+            "unlock": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.103:8080/unlock"
+                    }
+                ]
+            }
+        },
+        "description": "A smart door lock that can be locked and unlocked remotely.",
+        "events": {
+            "locked": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.103:8080/events/locked"
+                    }
+                ]
+            },
+            "unlocked": {
+                "data": {
+                    "type": "boolean"
+                },
+                "forms": [
+                    {
+                        "href": "http://192.168.1.103:8080/events/unlocked"
+                    }
+                ]
+            }
+        },
+        "id": "urn:uuid:de2ecfe2-264f-4d5a-b907-b6df6a9faae2",
+        "properties": {
+            "lockStatus": {
+                "forms": [
+                    {
+                        "href": "http://192.168.1.103:8080/lockStatus"
+                    }
+                ],
+                "readOnly": true,
+                "type": "boolean"
+            }
+        },
+        "registration": {
+            "created": "2024-03-19T19:42:57.527173124Z",
+            "modified": "2024-03-19T19:42:57.527173124Z"
+        },
+        "security": "basic_sc",
+        "securityDefinitions": {
+            "basic_sc": {
+                "scheme": "nosec"
+            }
+        },
+        "title": "Smart Door Lock"
+    },
+    {
+        "@context": "https://www.w3.org/2019/wot/td/v1",
+        "created": "2020-04-07T14:14:01.403935979Z",
+        "id": "urn:uuid:f0cec63a-cd84-4ac2-b164-72867df2fc2a",
+        "meta": {
+            "nodered": {
+                "transformation": "raw_to_senml"
+            },
+            "senml_name": "c5/room2/device2",
+            "zway_name": "ZWayVDev_zway_3-0-49-4"
+        },
+        "modified": "2020-04-07T14:14:01.403935979Z",
+        "properties": {
+            "current": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.gateway.com/status",
+                        "op": [
+                            "readproperty"
+                        ],
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            },
+            "history": {
+                "forms": [
+                    {
+                        "contentType": "application/senml+json",
+                        "href": "https://example.storage-service.com/data/c5/room2/device2",
+                        "security": [
+                            "basic_sc"
+                        ]
+                    }
+                ],
+                "type": "number"
+            }
+        },
+        "registration": {
+            "created": "2024-03-05T20:37:35.051596094Z",
+            "modified": "2024-03-05T20:37:35.051596094Z"
+        },
+        "security": [
+            "basic_sc"
+        ],
+        "securityDefinitions": {
+            "basic_sc": {
+                "in": "header",
+                "scheme": "basic"
+            }
+        },
+        "title": "Fibaro Wall Plug"
+    }
+]
