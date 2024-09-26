@@ -19,14 +19,14 @@
   "http": {
     "publicEndpoint": "http://fqdn-of-the-host:8081",
     "bindAddr": "0.0.0.0",
-    "bindPort": 8081,
+    "bindPort": 8000,
     "tls": {
       "enabled": false,
       "keyFile": "./tls/key.pem",
       "certFile": "./tls/cert.pem"
     },
     "auth": {
-      "enabled": true,
+      "enabled": false,
       "provider": "keycloak",
       "providerURL": "http://localhost:8080/realms/realm",
       "clientID": "account",

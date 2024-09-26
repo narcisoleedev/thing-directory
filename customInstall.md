@@ -231,7 +231,6 @@ Após isso, se todos os passos foram seguidos, você deve receber a autorizaçã
 
 *To be completed*
 
-
 ### Port Forwading
 
 *To be completed*
