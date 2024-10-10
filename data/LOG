@@ -602,3 +602,22 @@
 11:56:45.248075 table@remove removed @105
 12:09:25.588057 db@close closing
 12:09:25.588213 db@close done T·148.926µs
+=============== Oct 9, 2024 (-03) ===============
+16:14:40.233803 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:14:40.234944 version@stat F·[0 2] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+16:14:40.234960 db@open opening
+16:14:40.235026 journal@recovery F·1
+16:14:40.235286 journal@recovery recovering @115
+16:14:40.236111 version@stat F·[0 2] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+16:14:40.240752 db@janitor F·4 G·0
+16:14:40.240781 db@open done T·5.806816ms
+=============== Oct 10, 2024 (-03) ===============
+09:50:30.221585 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+09:50:30.222495 version@stat F·[0 2] S·5KiB[0B 5KiB] Sc·[0.00 0.00]
+09:50:30.222502 db@open opening
+09:50:30.222537 journal@recovery F·1
+09:50:30.222694 journal@recovery recovering @118
+09:50:30.228559 memdb@flush created L0@120 N·19 S·3KiB "urn..001,v44":"urn..001,v26"
+09:50:30.228640 version@stat F·[1 2] S·9KiB[3KiB 5KiB] Sc·[0.25 0.00]
+09:50:30.232147 db@janitor F·5 G·0
+09:50:30.232161 db@open done T·9.654361ms
